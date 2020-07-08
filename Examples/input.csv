@@ -1,0 +1,106 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Text Area 1,Text Area 2,Text Area 3
+1,Page,,,,,,,,,Online Shopping Cart UML Class Diagram,,
+2,Text,Standard,1,,68,,,,,Copy of Class Diagram for Plant vs Zombie __ backup,,
+3,Text,Standard,1,,68,,,,,"Prabhat Soni  | Prabhat Soni |  July 8, 2020",,
+4,Class,UML,1,,,,,,,<< interface >> Serializable,,
+5,Class,UML,1,,,,,,,Sun,"- timeLeft : int
+- power : int","+ Sun()
+
++ getSunPower() : int"
+6,Class,UML,1,,,,,,,Level_1,"- legalRowNumbers : Arraylist<int> - zombieLeftByType: Hashmap<Zombie, int>","+ Level_1() 
++ dropZombieFromSkyAtRandomPosition() : Zombie + initialiseYardWithRows(legalRowNumbers : int) : void"
+7,Class,UML,1,,,,,,,Level_2,"- legalRowNumbers : Arraylist<int> - zombieLeftByType: Hashmap<Zombie, int>","+ Level_2()  + dropZombieFromSkyAtRandomPosition() : Zombie
++ initialiseYardWithRows(legalRowNumbers : int) : void"
+8,Class,UML,1,,,,,,,Plant {abstract},,# doUniquePlantAction() : void {abstract}
+9,Class,UML,1,,,,,,,Pea,- damageAmount : Double,+ Pea()  - giveDamage() : Double
+10,Class,UML,1,,,,,,,Peashooter,,"+ Peashooter()
+
+# doUniquePlantAction() : void - createPeaObject() : Pea"
+11,Class,UML,1,,,,,,,Sunflower,,"+ Sunflower()
+
+# doUniquePlantAction() : void - createSunObject() : Sun"
+12,Class,UML,1,,,,,,,Cherry,-  timeLeft : int,"+ Cherry()
+
+# doUniquePlantAction() : void -  tickOneSecond(timeLeft : int) : void -  amIReadyToBlast(timeLeft : int) : void"
+13,Class,UML,1,,,,,,,Walnut,- Health,"+ Walnut()
+
+# doUniquePlantAction() : void - takeOneBite() : void"
+14,Class,UML,1,,,,,,,Zombie {abstract},"# health : Double
+# walkSpeed : Double # biteSize : Double = defaultValue","<< constructor >> + Zombie()  # takeDamage(reduceBy : Double) : void
+# eatPlantOneBite(currentPlant : Plant) : void"
+15,Class,UML,1,,,,,,,Level_3,"- legalRowNumbers : Arraylist<int> - zombieLeftByType: Hashmap<Zombie, int>","+ Level_3()  + dropZombieFromSkyAtRandomPosition() : Zombie
++ initialiseYardWithRows(legalRowNumbers : int) : void"
+16,Class,UML,1,,,,,,,Level_4,"- legalRowNumbers : Arraylist<int> - zombieLeftByType: Hashmap<Zombie, int>","+ Level_4()  + dropZombieFromSkyAtRandomPosition() : Zombie
++ initialiseYardWithRows(legalRowNumbers : int) : void"
+17,Class,UML,1,,,,,,,Level_5,"- legalRowNumbers : Arraylist<int> - zombieLeftByType: Hashmap<Zombie, int>","+ Level_5() 
++ dropZombieFromSkyAtRandomPosition() : Zombie + initialiseYardWithRows(legalRowNumbers : int) : void"
+18,Class,UML,1,,,,,,,Level {abstract},"- coordinateSystemOfPlantsAndZombies : Arraylist<PC>
+- availablePlants : Arraylist<Plant>
+- thisLevelNumber : int - zombieLeftByType: Hashmap<Zombie, int>
+- numberOfSunTokensAvailable : int
+- progressPercentage : Double","+ initialiseYardWithRows(legalRowNumbers : Arraylist<int>) : void {abstract} + dropZombieFromSkyAtRandomPosition() : Zombie {abstract}
++ saveThisGameState() : String
++ deserialize(filename : String) : Level + selectPlantFromChoices() + computeSelectablePlantsByLevelNumber(thisLevelNumber : int) : Arraylist<Plant> + getOneRandomZombieFromHashmap(zombieLeftByType : Hashmap<Zombie, int>) : Zombie
++ saveThisGame() : Level + goToMainMenu(mainmenu1 : MainMenu) + dropSunAtRandomPosition() : Sun"
+19,Class,UML,1,,,,,,,Normal_Zombie,,+ Normal_Zombie()
+20,Class,UML,1,,,,,,,Conehead_Zombie,,+ Conehead_Zombie()
+21,Class,UML,1,,,,,,,Flag_Zombie,,+ Flag_Zombie()
+22,Class,UML,1,,,,,,,CrazyDave,,+ CrazyDave()  - speakMessage(myMessage : String) : void
+23,Class,UML,1,,,,,,,LawnMover,,+ LawnMover()  - executeLawnMover() : void
+24,Class,UML,1,,,,,,,PC {abstract},- Health : Double,# takeDamage(reduceBy : Double) : void
+25,Class,UML,1,,,,,,,NPC {abstract},,
+26,Class,UML,1,,,,,,,Character {abstract},,
+27,Class,UML,1,,,,,,,LoginScreen,"+ listOfExistingUsernames : Arraylist<String>
+- selectedPlayer : Player",+ LoginScreen()  + addNewPlayerToArraylist(createdPlayer : Arraylist) : void + checkIfUsernameExists(inputUsername : String) : boolean + callLevelsScreen(playerToSend : Player) : Player desiredPlayer 
+28,Class,UML,1,,,,,,,LevelsScreen,- savedGames : ArrayList<Level>,"LevelsScreen()  - userSelectsLevel() : int
+- callLevelX(selectedLevel : x) : void - showSavedGames(savedGames : ArrayList<Level>) : void
+- callSavedGameX(selectedSavedGameIndex : int) : void
+- goToLoginScreen(loginscreen1 : LoginScreen) : void"
+29,Class,UML,1,,,,,,,PlantsvsZombies,,+ callLoginScreen() : void
+30,Class,UML,1,,,,,,,Player,"- username : String
+- whichLevelYouHaveReachedTill : int","Player(inputUsername : String) 
++ getName() : String
++ getLevel() : int
+
++ incLevel() : void
+
++ serialize() : String
+- deserialize(filename : String) : Player"
+31,Class,UML,1,,,,,,,<< exception >> ClashingLoginNameException,,
+32,Class,UML,1,,,,,,,<< exception >> HaveNotUnlockedThisLevelYetException,,
+33,Line,,1,,68,2,2,None,None,,,
+34,Line,,1,,,8,10,Generalization,None,0..*,*,
+35,Line,,1,,,8,11,Generalization,None,0..*,*,
+36,Line,,1,,,8,12,Generalization,None,0..*,*,
+37,Line,,1,,,8,13,Generalization,None,0..*,0..*,
+38,Line,,1,,,18,6,Generalization,None,,,
+39,Line,,1,,,18,7,Generalization,None,,,
+40,Line,,1,,,18,15,Generalization,None,,,
+41,Line,,1,,,18,16,Generalization,None,,,
+42,Line,,1,,,18,17,Generalization,None,,,
+43,Line,,1,,,14,19,Generalization,None,0..*,0..*,
+44,Line,,1,,,14,20,Generalization,None,,,
+45,Line,,1,,,14,21,Generalization,None,0..*,1,
+46,Line,,1,,,24,8,Generalization,None,0..*,*,
+47,Line,,1,,,24,14,Generalization,None,0..*,*,
+48,Line,,1,,,25,22,Generalization,None,0..*,1,
+49,Line,,1,,,25,23,Generalization,None,0..*,1..5,
+50,Line,,1,,,26,24,Generalization,None,,,
+51,Line,,1,,,26,25,Generalization,None,,,
+52,Line,,1,,,29,27,Composition,None,0..*,1,
+53,Line,,1,,,27,28,Composition,None,0..*,1,
+54,Line,,1,,,27,30,Composition,None,0..*,1..*,
+55,Line,,1,,,26,18,None,Composition,,,
+56,Line,,1,,,28,18,Composition,None,,,
+57,Line,,1,,,10,9,Composition,None,0..*,0..*,
+58,Line,,1,,,11,5,Composition,None,,,
+59,Line,,1,,,5,18,None,Composition,,,
+60,Line,,1,,,28,27,None,Generalization,,,
+61,Line,,1,,,30,4,None,Generalization,,,
+62,Line,,1,,,18,4,None,Generalization,,,
+63,Line,,1,,,18,28,None,Generalization,,,
+64,Line,,1,,,26,4,None,Generalization,,,
+65,Line,,1,,,31,27,Open Arrow,None,<<throws>>,,
+66,Line,,1,,,32,28,Open Arrow,None,<<throws>>,,
+67,Line,,1,,,20,,None,None,0..*,,
+68,Group 1,,1,,,,,,,,,

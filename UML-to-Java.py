@@ -44,7 +44,7 @@ varname : datatype
 import csv 
 
 # csv file name
-filename = "./PvZ_ClassDiagram.csv"   # file to read from
+filename = "./input.csv"   # file to read from
 outputFile = open("./output.java", "a") # file to write to
 
 
